@@ -1,5 +1,7 @@
 package edu.craptocraft.domain.estacion;
 
+import edu.craptocraft.domain.bicicleta.Movil;
+
 public class Estacion {
     
     private int id;
@@ -40,6 +42,8 @@ public class Estacion {
 
 
 
+
+    // METODOS 
     public void consultarEstacion(){
         System.out.println(this.toString());
     }
@@ -55,7 +59,16 @@ public class Estacion {
         return anclajesLibres;
     }
 
+    public void anclarBicicleta(Movil id){
 
+        for (int i = 0; i < getNumAnclajes(); i++) {
+            if(this.anclajes[i] == 0){
+                this.anclajes[i] = id.getId();
+                break;
+            }
+        }
+
+    }
 
 
     @Override

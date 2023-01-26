@@ -5,6 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import edu.craptocraft.domain.bicicleta.Bicicleta;
+
 
 public class EstacionTest {
 
@@ -25,7 +27,22 @@ public class EstacionTest {
         assertEquals(0, estacion.anclajesLibres());
     }
 
-    
+    @Test
+    public void anclarBicicletaTest() {
+
+        Estacion estacion = new Estacion(1, "Manacor", 6);
+        estacion.anclarBicicleta(new Bicicleta(911));
+        assertEquals(5, estacion.anclajesLibres());
+        // cubrir branch del stream 
+        estacion.anclarBicicleta(new Bicicleta(922));
+        assertEquals(4, estacion.anclajesLibres());
+
+        // // cubrir else
+        estacion = new Estacion(1, "Manacor", 0);
+        estacion.anclarBicicleta(new Bicicleta(911));
+        assertEquals(0, estacion.anclajesLibres());
+   
+    }    
     
 }
 
