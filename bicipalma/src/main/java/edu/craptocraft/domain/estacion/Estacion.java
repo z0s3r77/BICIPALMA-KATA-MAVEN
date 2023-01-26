@@ -94,4 +94,8 @@ public class Estacion {
     
     }
 
+    public void consultarAnclajes() {
+        System.out.println(anclajesLibres());
+    }
+
 }
