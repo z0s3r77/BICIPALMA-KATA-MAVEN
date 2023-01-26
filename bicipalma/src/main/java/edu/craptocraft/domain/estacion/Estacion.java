@@ -1,6 +1,7 @@
 package edu.craptocraft.domain.estacion;
 
 import edu.craptocraft.domain.bicicleta.Movil;
+import edu.craptocraft.domain.tarjetausuario.Autenticacion;
 
 public class Estacion {
     
@@ -70,6 +71,19 @@ public class Estacion {
 
     }
 
+
+    public boolean leerTarjetaUsuario(Autenticacion tarjeta){
+        return tarjeta.isActivada();
+    }
+
+
+    public void retirarBicicleta(Autenticacion tarjeta){
+        for (int i = 0; i < getNumAnclajes(); i++) {
+            if (this.anclajes[i]!=0) {
+                this.anclajes[i] = 0;
+            }
+        }
+    }
 
     @Override
     public String toString(){
