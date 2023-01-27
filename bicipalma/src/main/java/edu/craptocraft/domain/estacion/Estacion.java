@@ -3,6 +3,10 @@ package edu.craptocraft.domain.estacion;
 import edu.craptocraft.domain.bicicleta.Movil;
 import edu.craptocraft.domain.tarjetausuario.Autenticacion;
 
+
+// Está class supera los casos test
+
+
 public class Estacion {
     
     private int id;
